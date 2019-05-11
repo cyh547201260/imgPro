@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>王爱玲门户网站后台</title>
+		<link rel="stylesheet" href="static/css/main.css" />
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.cms_login {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				background-repeat: no-repeat;
+				background-image: url(static/images/bg-spe.jpg);
+				background-size: 100% 100%;
+			}
+			
+			.flexCenter {
+				text-align: center;
+				margin: auto;
+			}
+			
+			.cms_login_container {
+				width: 70%;
+				height: 70%;
+				display: flex;
+				justify-content: center;
+			}
+			
+			.cms_login_image {
+				width: 60%;
+				height: 100%;
+			}
+			
+			.cms_login_from {
+				width: 40%;
+				height: 100%;
+				background-color: white;
+				border-radius: 10px;
+				box-shadow: 0px 0px 10px #ccc;
+			}
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.divBox {
+				display: flex;
+				justify-content: center;
+				width: 80%;
+				height: 46px;
+				margin-top: 60px;
+				margin-left: 10%;
+				position: relative;
+			}
+			
+			.cms_login_logo {
+				display: flex;
+				justify-content: center;
+				width: 80%;
+				height: 60px;
+				/* border: 1px solid green; */
+				margin-left: 10%;
+				margin-bottom: 22px;
+				margin-top: 25px;
+			}
+			
+			.cms_login_img {
+				width: 44px;
+				height: 44px;
+				position: absolute;
+				top: 1px;
+				left: 1px;
+			}
+			
+			.cms_login_ipt {
+				width: 100%;
+				outline: none;
+				padding-left: 50px;
+			}
+			
+			.cms_login_ipt60 {
+				width: 60%;
+				outline: none;
+				padding-left: 50px;
+			}
+			
+			.cms_login_ver {
+				width: 30%;
+				outline: none;
+				margin-left: 8%;
+				border: 1px solid #c32c2c;
+				background-color: #bd7070;
+				line-height: 46px;
+				letter-spacing: 4px;
+				border-radius: 4px;
+				cursor: default;
+				color: white;
+			}
+			
+			.margin_top60 {
+				margin-top: 40px;
+			}
+			
+			.login_btn {
+				width: 100%;
+				height: 60px;
+				letter-spacing: 10px;
+				font-size: 24px;
+				background-color: green;
+				border: none;
+				outline: none;
+				border-radius: 10px;
+				color: white;
+			}
+			
+			.login_btn:hover {
+				background-color: #044468;
+				border: none;
+				outline: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="cms_login" id="login-page">
+			<div class="cms_login_container flexCenter" style="min-height:390px;">
+				<div class="cms_login_image" style="min-width: 380px;">
+					<!-- <img src="./leftimg_04.png" alt=""> -->
+				</div>
+				<div class="cms_login_from" style="min-width: 380px;">
+					<form>
+						<div class="cms_login_logo"><span style="font-size:24px;">王爱玲个人后台登录管理</span></div>
+						<div class="divBox"> 
+							<img class="cms_login_img" src="static/images/username_mark.png"> 
+							<input class="cms_login_ipt" type="text" placeholder="请输入账号" id="cms_login_username" v-model="username">
+						</div>
+						<div class="divBox"> 
+							<img class="cms_login_img" src="static/images/password_mark.png">
+							<input type="password" placeholder="请输入密码" class="cms_login_ipt" id="cms_login_passward" v-model="userpassword">
+						</div>
+						<div class="divBox margin_top60" style="border:none;">
+							<input class="login_btn" type="button" value="登录" name="submit">
+						</div>
+					</form>
+					<div class="option">
+						<a href="#" style="font-size: 20px;" class="oi oi-person"><span title="icon name" aria-hidden="true">忘记密码？</span></a>
+						<a href="#" style="font-size: 20px;"><span class="register">/&nbsp;&nbsp;注册</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="static/js/vue.js" type="text/javascript" charset="utf-8"></script>
+    	<script src="static/js/login.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

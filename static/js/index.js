@@ -2,14 +2,27 @@ var mainVue = new Vue({
 	el:'#main-box',
 	data:{
 		imageList:'',
+		currentPage:1,
 	},
 	created:function(){
 		
 	},
 	mounted:function(){
-		this.getImagesList();
+		var _this = this;
+    	this.getImagesList();
+		setTimeout(function(){
+			_this.swiperInitFun();
+			_this.pagerInit();
+		},10);
 	},
 	methods:{
+		//swiper初始化
+		swiperInitFun:function(){
+			var swiper = new Swiper('.swiper-container', {
+			    pagination: '.swiper-pagination',
+			    paginationClickable: true
+			});
+		},
 		//获取图片列表
 		getImagesList:function(){
 			var _this = this;
@@ -18,7 +31,7 @@ var mainVue = new Vue({
 				url:"api.php",
 				async:true,
 				data:{
-					
+					page:_this.currentPage,
 				},
 				success:function(res){
 					console.log(res)
@@ -30,7 +43,21 @@ var mainVue = new Vue({
 			});
 		},
 		//js 获取图片列表
-	}
+		//分页器初始化
+		pagerInit:function(){
+			var _this = this;
+			$("#page").paging({
+		        pageNum: 1, // 当前页面
+		        totalNum: 15, // 总页码
+		        totalList: 300, // 记录总数量
+		        callback: function (num) { //回调函数
+		            console.log(num);
+		            _this.currentPage = num;
+		            _this.getImagesList();
+	        	}
+			})
+		},
+	},
 })
 
 function getImageList(){
@@ -73,3 +100,8 @@ function createEle(item){
 	return html;
 }
 //getImageList();
+
+
+
+    // pageMe.js 使用方法
+    

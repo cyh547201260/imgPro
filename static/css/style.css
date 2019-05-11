@@ -2041,10 +2041,10 @@ only screen and (max-width: 767px) {
 }
 
 .feature-single-item .feature__des {
-  top: 30px;
+  top: 10px;
   left: 30px;
   right: 30px;
-  bottom: 30px;
+  bottom: 20px;
   position: absolute;
   opacity: 0;
   visibility: hidden;

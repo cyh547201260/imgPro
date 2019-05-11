@@ -23,8 +23,16 @@
     <!--=== Main Style CSS ===-->
     <link href="static/css/style.css" rel="stylesheet">
     
+    <!--swiper-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="static/open-iconic-master/font/css/open-iconic-bootstrap.css"/>
+	<link rel="stylesheet" href="static/css/main.css" />
+	<link rel="stylesheet" href="static/css/pager.css" />
+
     <!-- Modernizer JS -->
     <script src="static/js/modernizr-2.8.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="static/js/html5shiv.min.js"></script>
@@ -39,7 +47,7 @@
     <!-- header area start -->
     <header>
         <!-- start header top -->
-        <div class="header-top black-soft pl-35 pr-35 pl-sm-0 pr-sm-0 pl-lg-0 pr-lg-0 pl-xl-0 pr-xl-0">
+        <!--<div class="header-top black-soft pl-35 pr-35 pl-sm-0 pr-sm-0 pl-lg-0 pr-lg-0 pl-xl-0 pr-xl-0">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
@@ -77,7 +85,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div> -->
         <!-- end header top -->
 
         <!-- start header menu -->
@@ -87,7 +95,7 @@
                     <div class="col-lg-3 col-4">
                          <div class="brand-logo">
                             <a href="index.html">
-                                <img src="static/picture/logo.jpg" alt="brand logo">
+                                <img src="static/images/icon.png" alt="brand logo">
                             </a>
                          </div>
                     </div>
@@ -194,9 +202,11 @@
                         <div class="header-cart-option text-right">
                             <ul>
                                 <li>
-                                    <button type="submit" class="search-trigger"><i class="pe-7s-search"></i></button>
+                                    <a href="#" style="font-size: 20px;" class="oi oi-person"><span title="icon name" aria-hidden="true">登陆</span></a>
+                                    <a href="#" style="font-size: 20px;"><span class="register">/&nbsp;&nbsp;注册</span></a>
+                                    
                                 </li>
-                                <li class="cart-trigger"><i class="pe-7s-cart"></i>
+                                <li class="cart-trigger"></i>
                                     <ul class="mini-cart-drop-down">
                                         <li class="cart-top mb-20">
                                             <div class="cart-img">
@@ -258,105 +268,68 @@
     </header>
     <!-- header area end -->
 
-<div class="" style="width: 100%;height: 200px;background: pink;overflow: hidden;">
+<!--<div class="" style="width: 100%;height: 200px;background: pink;overflow: hidden;">
 	<div class="" :data-id="item.id" v-for="item in imageList" style="float: left;width: 100px; text-align: center;">
 		<img style="width: 100%;" :src="item.url"/>
 		<p v-text="item.title"></p>
 	</div>
-</div>
+</div>-->
 
 <!--<div class="" style="width: 100%;height: 200px;background: pink;overflow: hidden;" id="image-box">
 	
 </div>-->
-    <!-- slider area start -->
-    <div class="slider-area">
-        <div class="hero-slider-active hero__1 slick-arrow-style">
-            <div class="single-slider d-flex align-items-center" style="background-image: url(static/images/home1-slider1.jpg);">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="slider-text slider-style-1 text-center">
-                                <h4>Ski & Snowboard Sale</h4>
-                                <h1>Save Up To <span>20%</span> Off</h1>
-                                <p>On skis, boards, boots, bindings, outerwear, footwear and more!</p>
-                                <a class="home-btn" href="#">shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <span class="herobanner-progress"></span>
-            </div>
-            <div class="single-slider d-flex align-items-center" style="background-image: url(static/images/home1-slider2.jpg);">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="slider-text slider-style-1 text-center">
-                                <h4>Ski & Snowboard Sale</h4>
-                                <h1>Save Up To <span>20%</span> Off</h1>
-                                <p>On skis, boards, boots, bindings, outerwear, footwear and more!</p>
-                                <a class="home-btn" href="#">shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <span class="herobanner-progress"></span>
-            </div>
-        </div>
-    </div>
-    <!-- slider area end -->
 
+	<!--swiper arae-->
+	    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="item in imageList"><img :src="item.url" class="swiperImg"/></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    
+    <!-- slider area end -->
+    <!--图片分类-->
+	<div class="features-item-area pt-100 pt-sm-55 btns-box">
+		
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-light">时尚</button></div>
+		
+	</div>
+    <!--图片分类结束-->
+    
+    
     <!-- features item area start -->
     <div class="features-item-area pt-100 pt-sm-55">
         <div class="container-fluid">
             <div class="custom-row d-flex">
-                <div class="col-lg-4">
-                    <div class="feature-single-item">
+                <div class="col-lg-3" v-if="index<4" v-for="(item,index) in imageList">
+                    <div class="feature-single-item" >
                         <div class="feature__img">
                             <div class="feature__thum">
-                                <img src="static/picture/cms_1.1.jpg" alt="">
+                                <img :src="item.url" alt="">
+                                <h5 v-text="item.title"></h5>
                             </div>
                             <div class="feature__des">
                                 <div class="feature__content">
-                                    <h3>Splitboard & Accessories</h3>
-                                    <a href="shop-full-4-column.html">Shop Now</a>
+                                    <h3 v-text="item.id"></h3>
+                                    <a href="shop-full-4-column.html" v-text="item.title"></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="text__left">
+                        <!--<div class="text__left">
                             <span>Splitboard & Accessories</span>
-                        </div>
-                    </div> <!-- features single item end -->
-                </div> <!-- features single column end -->
-                <div class="col-lg-4">
-                    <div class="feature-single-item">
-                        <div class="feature__thum">
-                            <img src="static/picture/cms_1.2.jpg" alt="">
-                        </div>
-                        <div class="feature__des">
-                            <div class="feature__content">
-                                <h3>Snowboard Packages</h3>
-                                <a href="shop-full-4-column.html">Shop Now</a>
-                            </div>
-                        </div>
-                        <div class="text__left">
-                            <span>Snowboard Packages</span>
-                        </div>
-                    </div> <!-- features single item end -->
-                </div> <!-- features single column end -->
-                <div class="col-lg-4">
-                    <div class="feature-single-item">
-                        <div class="feature__thum">
-                            <img src="static/picture/cms_1.3.jpg" alt="">
-                        </div>
-                        <div class="feature__des">
-                            <div class="feature__content">
-                                <h3>Used Snowboard Gear</h3>
-                                <a href="shop-full-4-column.html">Shop Now</a>
-                            </div>
-                        </div>
-                        <div class="text__left">
-                            <span>Used Snowboard Gear</span>
-                        </div>
+                        </div>-->
                     </div> <!-- features single item end -->
                 </div> <!-- features single column end -->
             </div>
@@ -370,1355 +343,35 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section__title text-center mb-45">
-                        <h2>new <span>products</span></h2>
-                        <p>Browse the collection of our new products and latest products. You will denfinitely find what you are looking for.</p>
+                        <h2><span>精选图片</span></h2>
+                        <p>根据啦啦啦啦。长传啦啦啦啦</p>
                     </div>
                 </div>
             </div> <!-- section title end -->
-            <div class="product-carousel-active row slick-arrow-style2" data-row="2">
-                <div class="col">
+            <div class="product-carousel-active row" data-row="2">
+                <div class="col col-lg-3" v-for="item in imageList" style="width: 100%;">
                     <div class="product__item mb-50">
                         <div class="product__thumb mb-20">
                             <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-1.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-2.jpg" alt="">
+                                <img class="pri-img" :src="item.url" alt="">
                             </a>
                             <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
                                 <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
                                 <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
                                 <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
                             </div>
                         </div>
                         <div class="product__content">
-                            <h6><a href="product-details.html">Turbo Snowboard</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price">£50.00</span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
+                            <h6><a href="product-details.html" v-text="item.id">Turbo Snowboard</a></h6>
+                            <p><a href="product-details.html" v-text="item.title">Studio Design</a></p>
                         </div>
                     </div> <!-- product single item end -->
                 </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-3.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-4.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">Element Snowboard</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                    <span class="old-price"><del>£60.00</del></span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-5.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-6.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">Raygun Snowboard</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                    <span class="old-price"><del>£60.00</del></span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-7.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-8.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">Berzerker Snowboard</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                    <span class="old-price"><del>£60.00</del></span>
-                                </div>
-                                <div class="ratings"> 
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-9.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-10.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">Berzerker  Snowboard</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                    <span class="old-price"><del>£60.00</del></span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-11.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-11.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">K2 Snowboard 2018</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price">£50.00</span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-2.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-3.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">Raygun Snowboard</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                    <span class="old-price"><del>£60.00</del></span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-4.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-5.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">Element Snowboard</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                    <span class="old-price"><del>£60.00</del></span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-6.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-7.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">Arbor Swoon Camber</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                    <span class="old-price"><del>£60.00</del></span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-                <div class="col">
-                    <div class="product__item mb-50">
-                        <div class="product__thumb mb-20">
-                            <a class="img-overlay" href="product-details.html">
-                                <img class="pri-img" src="static/picture/product-8.jpg" alt="">
-                                <img class="sec-img" src="static/picture/product-9.jpg" alt="">
-                            </a>
-                            <div class="action_link">
-                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                            </div>
-                        </div>
-                        <div class="product__content">
-                            <h6><a href="product-details.html">Turbo Snowboard</a></h6>
-                            <p><a href="product-details.html">Studio Design</a></p>
-                            <div class="product__price__Ratings">
-                                <div class="price__box">
-                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                    <span class="old-price"><del>£60.00</del></span>
-                                </div>
-                                <div class="ratings">
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                    <span class="good"><i class="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- product single item end -->
-                </div> <!-- product single column end -->
-            </div>
-        </div>
+
+		    </div>
     </div>
     <!-- product main wrapper end -->
-
-    <!-- hot deals wrapper start -->
-    <div class="section-wrapper hot-deals-area pt-98 pt-sm-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section__title text-center mb-45">
-                        <h2 class="white">hot <span>deals</span></h2>
-                        <p class="white">The variety of product types, dozens of products are discounted on the day Browse the gallery right now.</p>
-                    </div>
-                </div>
-            </div> <!-- section title end -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="hot_deals_carousel_active slick-arrow-style2">
-                        <div class="product-details-carousel-item">
-                            <div class="product__details_carousel_inner">
-                                <div class="product__item">
-                                    <div class="product__thumb">
-                                        <a class="img-overlay" href="product-details.html">
-                                            <img class="pri-img" src="static/picture/product-big-1.jpg" alt="">
-                                            <img class="sec-img" src="static/picture/product-big-2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="discount-text">
-                                        <h4>sale up to 70% off</h4>
-                                    </div>
-                                </div>
-                                <div class="product_detail_content_inner">
-                                    <h2><a href="product-details.html">turbo snowboard</a></h2>
-                                    <h6><a href="product-details.html">studio design</a></h6>
-                                    <div class="product__price__ratings mb-20">
-                                        <div class="price__box">
-                                            <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                            <span class="old-price"><del>£60.00</del></span>
-                                        </div>
-                                        <div class="ratings">
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                        </div>
-                                    </div>
-                                    <p class="mb-30">Effective MegaPixel: About 2MPModel Number: VPAI720Screen Size: NOHDMI Output: NoWaterproof: NoImage Stabilization: No Image StabilizationPackage: NoNightShot Function: NoVolume: 41x41x41mmThe Surround Sound Support: NoWideangle: 360°*360°Maximum Aperture: 210 degree wide angleBuilt-in</p>
-                                    <a href="#" class="add_btn"><i class="pe-7s-cart"></i> add to cart</a>
-                                    <div class="product-countdown" data-countdown="2020/05/01"></div>
-                                </div>
-                            </div>
-                        </div> <!-- single carousel item end -->
-                        <div class="product-details-carousel-item">
-                            <div class="product__details_carousel_inner">
-                                <div class="product__item">
-                                    <div class="product__thumb">
-                                        <a class="img-overlay" href="product-details.html">
-                                            <img class="pri-img" src="static/picture/product-big-2.jpg" alt="">
-                                            <img class="sec-img" src="static/picture/product-big-1.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="discount-text">
-                                        <h4>sale up to 70% off</h4>
-                                    </div>
-                                </div>
-                                <div class="product_detail_content_inner">
-                                    <h2><a href="product-details.html">turbo snowboard</a></h2>
-                                    <h6><a href="product-details.html">studio design</a></h6>
-                                    <div class="product__price__ratings mb-20">
-                                        <div class="price__box">
-                                            <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                            <span class="old-price"><del>£60.00</del></span>
-                                        </div>
-                                        <div class="ratings">
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                        </div>
-                                    </div>
-                                    <p class="mb-30">Effective MegaPixel: About 2MPModel Number: VPAI720Screen Size: NOHDMI Output: NoWaterproof: NoImage Stabilization: No Image StabilizationPackage: NoNightShot Function: NoVolume: 41x41x41mmThe Surround Sound Support: NoWideangle: 360°*360°Maximum Aperture: 210 degree wide angleBuilt-in</p>
-                                    <a href="#" class="add_btn"><i class="pe-7s-cart"></i> add to cart</a>
-                                    <div class="product-countdown" data-countdown="2020/05/01"></div>
-                                </div>
-                            </div>
-                        </div> <!-- single carousel item end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- hot deals wrapper end -->
-
-    <!-- our product area start -->
-    <div class="section-wrapper pt-98 pb-43 pt-sm-50 pb-sm-17">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section__title text-center mb-30">
-                        <h2>our <span>products</span></h2>
-                        <p>Browse the collection of our new products and latest products. You will denfinitely find what you are looking for.</p>
-                    </div>
-                </div>
-            </div> <!-- section title end -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="product-tab d-flex justify-content-center mb-45">
-                        <ul class="nav d-flex justify-content-center">
-                            <li>
-                                <a class="active" data-toggle="tab" href="#tab_one">new arrival</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#tab_two">best seller</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#tab_three">featured products</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="tab_one">
-                            <div class="product-carousel-active2 row slick-arrow-style2">
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-1.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-2.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Turbo Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price">£50.00</span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-3.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-4.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Element Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-5.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-6.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Raygun Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-7.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-8.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Berzerker Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-9.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-10.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Berzerker  Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab_two">
-                            <div class="product-carousel-active2 row slick-arrow-style2">
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-2.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-3.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Turbo Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price">£50.00</span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-4.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-5.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Element Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-6.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-7.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Raygun Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-8.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-9.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Berzerker Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-10.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-11.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Berzerker  Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab_three">
-                            <div class="product-carousel-active2 row slick-arrow-style2">
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-3.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-2.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Turbo Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price">£50.00</span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-6.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-3.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Element Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-8.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-4.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Raygun Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-11.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-2.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Berzerker Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                                <div class="col">
-                                    <div class="product__item mb-50">
-                                        <div class="product__thumb mb-20">
-                                            <a class="img-overlay" href="product-details.html">
-                                                <img class="pri-img" src="static/picture/product-6.jpg" alt="">
-                                                <img class="sec-img" src="static/picture/product-9.jpg" alt="">
-                                            </a>
-                                            <div class="action_link">
-                                                <a title="Add to Cart" href="#"><i class="pe-7s-cart"></i></a>
-                                                <a title="Add to Wishlist" href="#"><i class="pe-7s-like"></i></a>
-                                                <a title="Quick View" href="#" data-target="#quick_view" data-toggle="modal"><i class="pe-7s-look"></i></a>
-                                                <a title="Details" href="#"><i class="pe-7s-copy-file"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <h6><a href="product-details.html">Berzerker  Snowboard</a></h6>
-                                            <p><a href="product-details.html">Studio Design</a></p>
-                                            <div class="product__price__Ratings">
-                                                <div class="price__box">
-                                                    <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                                    <span class="old-price"><del>£60.00</del></span>
-                                                </div>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- product single item end -->
-                                </div> <!-- product single column end -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- our product area end -->
-
-    <!-- testimonial area start -->
-    <div class="section-wrapper testimonial-wrapper pt-98 pb-100 pt-sm-55 pb-sm-55">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="testimonial-carousel-active">  
-                        <div class="testimonial-slide-item text-center">
-                            <div class="client-thumb text-center">
-                                <img src="static/picture/client-1.png" alt="">
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="email-box">
-                                    <p class="white">demo@prowin.com</p>
-                                </div>
-                                <div class="testimonial-des">
-                                    <p class="white">Great theme, excellent support. We had a few small issues with getting the dropdown menus to work and support 
-                                    fixed them and let us know which files were changed so that we could replicate from dev to production.</p>
-                                </div>
-                                <div class="client-namepost">
-                                    <p class="white">Orando bloom</p>
-                                </div>
-                            </div>
-                        </div> <!-- testimonial single item end -->
-                        <div class="testimonial-slide-item text-center">
-                            <div class="client-thumb">
-                                <img src="static/picture/client-2.png" alt="">
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="email-box">
-                                    <p class="white">demo@prowin.com</p>
-                                </div>
-                                <div class="testimonial-des">
-                                    <p class="white">Great theme, excellent support. We had a few small issues with getting the dropdown menus to work and support 
-                                    fixed them and let us know which files were changed so that we could replicate from dev to production.</p>
-                                </div>
-                                <div class="client-namepost">
-                                    <p class="white">Orando bloom</p>
-                                </div>
-                            </div>
-                        </div> <!-- testimonial single item end -->
-                        <div class="testimonial-slide-item text-center">
-                            <div class="client-thumb">
-                                <img src="static/picture/client-3.png" alt="">
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="email-box">
-                                    <p class="white">demo@prowin.com</p>
-                                </div>
-                                <div class="testimonial-des">
-                                    <p class="white">Great theme, excellent support. We had a few small issues with getting the dropdown menus to work and support 
-                                    fixed them and let us know which files were changed so that we could replicate from dev to production.</p>
-                                </div>
-                                <div class="client-namepost">
-                                    <p class="white">Orando bloom</p>
-                                </div>
-                            </div>
-                        </div> <!-- testimonial single item end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- testimonial area end -->
-
-    <!-- blog area start -->
-    <div class="section-wrapper blog-wrapper pt-100 pb-70 pb-lg-90 pb-md-65 pt-sm-60 pb-sm-55">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-8">
-                    <div class="blog-section-title text-center text-md-left mb-30">
-                        <h2>latest <span>blogs</span> </h2>
-                        <p>Do you want to present posts in the best way to highlight interesting moments of your blog? Focus on the latest news!</p>
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <div class="blog-item-content mb-30">
-                            <div class="blog-img-holder">
-                                <a href="blog-details.html"><img src="static/picture/blog-1.jpg" alt=""></a>
-                            </div>
-                            <div class="blog-item-content-inner">
-                                <div class="blog-content-holder">
-                                    <h3><a href="blog-details.html">This is First Post For XipBlog</a></h3>
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since </p>  
-                                    <a class="read_more" href="blog-details.html">read more</a>
-                                </div>
-                            </div>
-                        </div> <!-- single blog item end -->
-                        <div class="blog-item-content mb-30">
-                            <div class="blog-img-holder">
-                                    <a href="blog-details.html"><img src="static/picture/blog-2.jpg" alt=""></a>
-                            </div>
-                            <div class="blog-item-content-inner">
-                                <div class="blog-content-holder">
-                                    <h3><a href="blog-details.html">This is Fourth Post For XipBlog</a></h3>
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since </p>  
-                                    <a class="read_more" href="blog-details.html">read more</a>
-                                </div>
-                            </div>
-                        </div> <!-- single blog item end -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="newsletter-area">
-                        <div class="title-newsletter mb-20">
-                            <h2>Join our newsletter to receive monthly incentives</h2>
-                            <p>You can be always up to date with our company news!</p>
-                        </div>
-                        <form id="mc-form" >
-                            <input type="email" id="mc-email" autocomplete="off" class="newsletter-field" placeholder="enter your email">
-                            <button class="submit-btn" type="submit" id="mc-submit">subscribe !</button>
-                            <p>*Don’t worry, we won’t spam our customers mailboxes</p>
-                        </form>
-                        <!-- mailchimp-alerts Start -->
-                        <div class="mailchimp-alerts">
-                            <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
-                            <div class="mailchimp-success"></div><!-- mailchimp-success end -->
-                            <div class="mailchimp-error"></div><!-- mailchimp-error end -->
-                        </div><!-- mailchimp-alerts end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- blog area end -->
-
-    <!-- brand area start -->
-    <div class="section-wrapper brand-area pt-48 pb-48">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="brand-slider-active slick-arrow-style2">
-                        <div class="single-brand text-center">
-                            <a href="#"><img src="static/picture/brand-1.jpg" alt=""></a>
-                        </div>
-                        <div class="single-brand text-center">
-                            <a href="#"><img src="static/picture/brand-2.jpg" alt=""></a>
-                        </div>
-                        <div class="single-brand text-center">
-                            <a href="#"><img src="static/picture/brand-3.jpg" alt=""></a>
-                        </div>
-                        <div class="single-brand text-center">
-                            <a href="#"><img src="static/picture/brand-4.jpg" alt=""></a>
-                        </div>
-                        <div class="single-brand text-center">
-                            <a href="#"><img src="static/picture/brand-5.jpg" alt=""></a>
-                        </div>
-                        <div class="single-brand text-center">
-                            <a href="#"><img src="static/picture/brand-6.jpg" alt=""></a>
-                        </div>
-                        <div class="single-brand text-center">
-                            <a href="#"><img src="static/picture/brand-7.jpg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- brand area end -->
-
-    <!-- footer area start -->
-    <footer>
-        <div class="footer-top pt-96 pb-78 pt-sm-60 pb-sm-40">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-widget">
-                            <div class="footer-logo mb-20">
-                                <a href="index.html"><img src="static/picture/logo-footer.png" alt=""></a>
-                            </div>
-                            <div class="footer-widget-content">
-                                <p>We are a team of designers and developers that create high quality Magento, Prestashop, Opencart themes and provide premium and dedicated support to our products.</p>
-                                <ul class="location">
-                                    <li> <i class="pe-7s-map-marker"></i> Address: 8819 West 10th Street North</li>
-                                    <li> <i class="pe-7s-mail-open"></i> Support@posthemes.com</li>
-                                    <li> <i class="pe-7s-phone"></i> +012 345 6789 0000</li>
-                                </ul>
-                            </div>
-                        </div> <!-- end footer single widget -->
-                    </div> <!-- end footer single widget column -->
-                    <div class="col-lg-2 col-md-6">
-                        <div class="footer-widget">
-                            <div class="footer-title mb-30">
-                                <h6>our company</h6>
-                            </div>
-                            <div class="footer-widget-content">
-                                <ul>
-                                    <li><a href="#">Delivery</a></li>
-                                    <li><a href="#">legal notice</a></li>
-                                    <li><a href="#">about us</a></li>
-                                    <li><a href="#">secure payment</a></li>
-                                    <li><a href="#">prices drop</a></li>
-                                    <li><a href="#">stores</a></li>
-                                    <li><a href="#">my account</a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- end footer single widget -->
-                    </div> <!-- end footer single widget column -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <div class="footer-title mb-30">
-                                <h6>recommended</h6>
-                            </div>
-                            <div class="footer-widget-content">
-                                <div class="recommended-item-carousel row" data-row="3">
-                                    <div class="col">
-                                        <div class="recommended-item mb-20">
-                                            <div class="recm-item-thumb">
-                                                <a href="product-details.hrtml">
-                                                    <img src="static/picture/product-2.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="recommended-item-des">
-                                                <span><a href="product-details.html">Arbor Swoon Camber</a></span>
-                                                <span class="recm-price">$50.00</span>
-                                            </div>
-                                        </div> <!-- end single slide item -->
-                                    </div> <!-- end single column-->
-                                    <div class="col">
-                                        <div class="recommended-item mb-20">
-                                            <div class="recm-item-thumb">
-                                                <a href="product-details.hrtml">
-                                                    <img src="static/picture/product-7.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="recommended-item-des">
-                                                <span><a href="product-details.html">Element Snowboard</a></span>
-                                                <span class="recm-price">$60.00</span>
-                                            </div>
-                                        </div> <!-- end single slide item -->
-                                    </div> <!-- end single column-->
-                                    <div class="col">
-                                        <div class="recommended-item mb-20">
-                                            <div class="recm-item-thumb">
-                                                <a href="product-details.hrtml">
-                                                    <img src="static/picture/product-6.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="recommended-item-des">
-                                                <span><a href="product-details.html">Giro Nine MIPS Helmet</a></span>
-                                                <span class="recm-price">$80.00</span>
-                                            </div>
-                                        </div> <!-- end single slide item -->
-                                    </div> <!-- end single column-->
-                                    <div class="col">
-                                        <div class="recommended-item mb-20">
-                                            <div class="recm-item-thumb">
-                                                <a href="product-details.hrtml">
-                                                    <img src="static/picture/product-9.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="recommended-item-des">
-                                                <span><a href="product-details.html">Arbor Swoon Camber</a></span>
-                                                <span class="recm-price">$50.00</span>
-                                            </div>
-                                        </div> <!-- end single slide item -->
-                                    </div> <!-- end single column-->
-                                    <div class="col">
-                                        <div class="recommended-item mb-20">
-                                            <div class="recm-item-thumb">
-                                                <a href="product-details.hrtml">
-                                                    <img src="static/picture/product-11.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="recommended-item-des">
-                                                <span><a href="product-details.html">Element Snowboard</a></span>
-                                                <span class="recm-price">$60.00</span>
-                                            </div>
-                                        </div> <!-- end single slide item -->
-                                    </div> <!-- end single column-->
-                                    <div class="col">
-                                        <div class="recommended-item mb-20">
-                                            <div class="recm-item-thumb">
-                                                <a href="product-details.hrtml">
-                                                    <img src="static/picture/product-1.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="recommended-item-des">
-                                                <span><a href="product-details.html">Giro Nine MIPS Helmet</a></span>
-                                                <span class="recm-price">$80.00</span>
-                                            </div>
-                                        </div> <!-- end single slide item -->
-                                    </div> <!-- end single column-->
-                                </div>
-                            </div>
-                        </div> <!-- end footer single widget -->
-                    </div> <!-- end footer single widget column -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <div class="footer-title mb-30">
-                                <h6>folow @ instagram</h6>
-                            </div>
-                            <div class="footer-widget-content">
-                                <div class="instagram-body">
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-1.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-3.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-3.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-4.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-5.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-6.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-7.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-8.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                    <div class="instagram-single-thumb">
-                                        <a href="#">
-                                            <img src="static/picture/instagram-9.jpg" alt="">
-                                        </a>
-                                    </div> <!-- end single instagram -->
-                                </div>
-                            </div>
-                        </div> <!-- end footer single widget -->
-                    </div> <!-- end footer single widget column -->
-                </div>
-            </div>
-        </div> 
-        <!-- footer top end -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="copyright-text">
-                            <p>Copyright <a href="http://www.17sucai.com/">Hastech</a> All Rights Reserved</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="footer-social-link text-center text-sm-right">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-youtube"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        <!-- footer area end -->
-    </footer>
-    <!-- footer area end -->
-
+        
     <!-- Quick view modal start -->
     <div class="modal fade" id="quick_view">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -1805,11 +458,14 @@
         <i class="fa fa-angle-double-up"></i>
     </div> 
     <!-- /End Scroll to Top -->
+    <div id="page" class="page_div">
+    	
+    </div>
 
 
     
 </div>
-
+	
     <!--=======================Javascript============================-->
     <!--=== Jquery Min Js ===-->
     <script src="static/js/jquery-3.3.1.min.js"></script>
@@ -1823,9 +479,12 @@
     <script src="static/js/plugins.js"></script>
     <!--=== Ajax Mail Js ===-->
     <script src="static/js/ajax-mail.js"></script>
+    <script src="static/js/pager.js"></script>
     <!--=== Active Js ===-->
     <script src="static/js/active.js"></script>
     <script src="static/js/vue.js" type="text/javascript" charset="utf-8"></script>
     <script src="static/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <!--分页器 插件-->
+    
 </body>
 </html>

@@ -96,40 +96,40 @@ URL: www.bootstrapmb.com
 
 	// product Carousel For 2 Column
 	$('.product-carousel-active').each(function (){
-		var $this = $(this);
-		var $row = $this.attr("data-row") ? parseInt($this.attr("data-row"), 10) : 1;
-		$this.slick({
-			infinite: true,
-			arrows: true,
-			dots: false,
-			slidesToShow: 4,
-			slidesToScroll: 1,
-			rows: $row,
-			prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
-			nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
-			responsive: [
-				{
-					breakpoint: 992,
-					settings: {
-						slidesToShow: 3,
-					}
-				},
-				{
-					breakpoint: 767,
-					settings: {
-						slidesToShow: 2,
-						arrows: false,
-					}
-				},
-				{
-					breakpoint: 479,
-					settings: {
-						slidesToShow: 1,
-						arrows: false,
-					}
-				},
-			]
-		});
+//		var $this = $(this);
+//		var $row = $this.attr("data-row") ? parseInt($this.attr("data-row"), 10) : 1;
+//		$this.slick({
+//			infinite: true,
+//			arrows: true,
+//			dots: false,
+//			slidesToShow: 4,
+//			slidesToScroll: 1,
+//			rows: $row,
+//			prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+//			nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
+//			responsive: [
+//				{
+//					breakpoint: 992,
+//					settings: {
+//						slidesToShow: 3,
+//					}
+//				},
+//				{
+//					breakpoint: 767,
+//					settings: {
+//						slidesToShow: 2,
+//						arrows: false,
+//					}
+//				},
+//				{
+//					breakpoint: 479,
+//					settings: {
+//						slidesToShow: 1,
+//						arrows: false,
+//					}
+//				},
+//			]
+//		});
 	});
 
 
